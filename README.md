@@ -4,5 +4,5 @@ Assignment introduction to Java Script and DOM
 
 Hosted at : <br>
 [Painter](https://44-563-web-apps-s23.github.io/44563-webapps-s23-assignment6-chandan-vavilala/painter.html) <br>
-[Currency Conversion](https://44-563-web-apps-s23.github.io/44563-webapps-s23-assignment6-chandan-vavilala/conversion.html) <br>
+[Currency Conversion](https://44-563-web-apps-s23.github.io/44563-webapps-s23-assignment6-chandan-vavilala/conversions.html) <br>
 [Candy](https://44-563-web-apps-s23.github.io/44563-webapps-s23-assignment6-chandan-vavilala/candy.html)
