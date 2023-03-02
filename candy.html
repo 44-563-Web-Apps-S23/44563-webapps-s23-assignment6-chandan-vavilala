@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+ <title>Candy</title>
+<body>
+
+<h2>Vavilala Poorna Chandan Reddy Chooses Candy</h2>
+
+<form>
+    <input type ="checkbox" id="dark" name="chocolatex" value="true">
+    <label for="dark">Dark chocolate</label></br>
+
+    <input type ="checkbox" id="nuts" name="chocolatey" value="true">
+    <label for="nuts">Nuts </label></br>
+
+    <input type ="checkbox" id="chewy" name="chocolatez" value="true">
+    <label for="chewy">Chewy</label></br>
+
+    <input type="button" onclick="SelectBox()" value="Select a box">
+ </form>
+ <br>
+ <form>
+    <input type="text" value="size" id="property">
+    <label for="property">Enter the size</label><br>
+
+    <input type="text" id="price">
+    <label for="price">Enter the price</label><br>
+
+    <input type="button" value="update the box" onclick="updateBox()">
+ </form>
+
+
+<p id="result">The result will be displayed here:</p>
+
+
+<script>
+    let  my_candy_box={}
+    function SelectBox() {
+        console.log("Getting input")
+        my_candy_box={}
+        my_candy_box.dark= document.getElementById("dark").checked
+        my_candy_box.nuts= document.getElementById("nuts").checked
+        my_candy_box.chewy= document.getElementById("chewy").checked
+        out = document.getElementById("result")
+        out.innerHTML=JSON.stringify(my_candy_box)
+    }
+    function updateBox() {
+        Size=document.getElementById("property").value
+        price = document.getElementById("price").value
+        my_candy_box["Size"]=Size
+        my_candy_box["Price"]=price
+        out = document.getElementById("result")
+        out.innerHTML=JSON.stringify( my_candy_box)
+    }
+
+</script>
+</body>
+</html>
