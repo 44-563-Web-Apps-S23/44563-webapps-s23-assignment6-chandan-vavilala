@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+ <title>Currency Conversion</title>
+<body>
+
+<h2>Vavilala Poorna Chandan Reddy Shows Currency Conversions</h2>
+
+<form>
+    <label for="form1_base">Enter base amount :</label>
+    <input type ="number" id="form1_base" name="form1_base" value="50"> <br>
+
+    <label for="form1_conversion">Enter the conversion rate </label>
+    <input type ="number" id="form1_conversion" name="form1_conversion" value="35"> <br>
+
+    <input type="button" onclick="convert()" value="show conversions">
+</form>
+<p id="result">The result will be displayed here:</p>
+
+<script> 
+function convert(){
+    console.log("Getting form values")
+    base = document.getElementById("form1_base").value
+    conversion = document.getElementById("form1_conversion").value
+    conversion=base*conversion
+    var toShow=""
+    toShow+=base+" is "+Math.round(conversion*100)/100+"; "
+    for(var i=2; i<=5;i++){
+        base*=2
+        conversion*=2
+        toShow+=base+" is "+Math.round(conversion*100)/100+"; "
+    }
+    out = document.getElementById("result")
+    out.innerHTML = "Conversions are: "+toShow
+}
+</script>
+<form>
+    <input type="radio" id="average" name="operation" value="mean" onclick="chooseOp()"   >
+    <label for="average">average</label></br>
+  
+    <input type="radio" id="max" name="operation" value="maximum"  onclick="chooseOp()"   >
+    <label for="max">max</label></br>
+  
+    <input type="radio" id="min" name="operation" value="minimum" onclick="chooseOp()"   >  
+    <label for="min">min</label></br>
+  </form>
+  <p id="result1">The result will be displayed here :</p>
+
+  <script>
+    function chooseOp() {
+    console.log("Getting input")
+    base1 = document.getElementById("form1_base").value
+    conversion1 = document.getElementById("form1_conversion").value
+    averageop = document.getElementById("average").checked
+    maximumop = document.getElementById("max").checked
+    minimumop = document.getElementById("min").checked
+    out = document.getElementById("result1")
+    if(averageop==true){
+        out.innerHTML = "avg of "+base1+" and "+conversion1+" is "+(+base1+ +conversion1)/2
+    } 
+    else if(maximumop==true){
+        out.innerHTML = "max of "+base1+" and "+conversion1+" is "+Math.max(base1, conversion1)
+    }
+    else if(minimumop==true){
+        out.innerHTML = "min of "+base1+" and "+conversion1+" is "+Math.min(base1, conversion1)
+    }
+}
+</script>
+</body>
+</html>
